@@ -30,7 +30,7 @@ export function useArchive(id: string | undefined) {
       const { data, error } = await supabase
         .from("sessions")
         .select("*")
-        .eq("id", id)
+        .eq("transaction_id", id)
         .single();
 
       if (error) throw error;
